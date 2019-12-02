@@ -5,11 +5,13 @@ const CryptoJS = require('crypto-js');
 
 const UserCtrl = {};
 
+// Obtener todos los usuarios
 UserCtrl.getUsers = async (req, res) => {
     const users = await User.find();
     res.json(users);
 }
 
+// Registrar usuario
 UserCtrl.postUser = async (req, res) => {
     req.body.password = CryptoJS.AES.encrypt(req.body.password, Config.Encrypt);
     await new User(req.body).save().then(user => {

@@ -5,11 +5,11 @@ const { Config } = require('../Configs/app.config');
 exports.CreateToken = User => {
 
     const payload = {
-        user: User._id,
-        iat: Moment().unix(),
-        exp: Moment().add(15, 'days').unix()
+        sub: User._id, // Id del usuario
+        iat: Moment().unix(), // Cuando se crea el token
+        exp: Moment().add(10, 'days').unix() // Cuando expira el token
     }
 
-    //return token
+    //retornar el token
     return JWT.sign(payload, Config.Token);
 };

@@ -6,7 +6,7 @@ const UserSchema = new schema({
     password: { type: String, required: true },
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    image: { type: String, default: 'https://image.flaticon.com/icons/svg/660/660611.svg' },
+    image: { type: String, default: 'https://image.flaticon.com/icons/svg/149/149071.svg' },
     createAt: { type: Date, default: Date.now }
 });
 

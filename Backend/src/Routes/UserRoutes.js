@@ -4,6 +4,6 @@ const router = express.Router();
 
 router.get('/user', UserCtrl.getUsers);
 
-router.post('/user/create', UserCtrl.postUser);
+router.post('/user/create', UserCtrl.postUser); //Registrar usuario
 
 module.exports = router;
