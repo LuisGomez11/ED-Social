@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private Http: HttpClient) { }
 
   SignUp(User: User): Observable<User> {
-    return this.Http.post<User>(environment.apiUrlUser, User);
+    return this.Http.post<User>(environment.urlUser, User);
   }
 
 }
