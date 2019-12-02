@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Patua+One&display=swap');
+
+html, body{
+    height: 100%;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.gradient{
+    background: #5433FF;
+    background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); 
+    background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);
+}
+

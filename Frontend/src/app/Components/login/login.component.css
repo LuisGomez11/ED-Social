@@ -1,0 +1,13 @@
+.row{
+    height: calc(100% - 56px);
+}
+
+.form-control{
+    border: none;
+    background-color: #eee;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    outline: none;
+}
