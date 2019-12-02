@@ -1,28 +1,36 @@
 <div class="row">
     <div class="col-md-12 h-100 d-flex align-items-center justify-content-center">
-        <div class="card w-50 animated bounceInUp">
-            <div class="card-header gradient text-center">
-                <span class="text-white font-weight-bold text-uppercase h3">Registrarse</span>
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <input type="text" class="form-control my-3" placeholder="Ingrese su nombre completo">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control my-3" placeholder="Ingrese su usuario">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control my-3" placeholder="Ingrese su correo electronico">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control my-3" placeholder="Ingrese su contraseña">
-                </div>
-            </div>
-            <div class="card-footer">
-                <span class="float-left">Ya tiene cuenta? <a routerLink="/login">Inicie sesión aqui</a></span>
-                <button class="btn gradient text-white border-0 font-weight-bold float-right">Registrar</button>
-            </div>
-        </div>
+        <form [formGroup]="FormControl" (ngSubmit)="signUp()" class="w-100  d-flex align-items-center justify-content-center">
+            <div class="card w-50 animated bounceInUp">
 
+                <div class="card-header gradient text-center">
+                    <span class="text-white font-weight-bold text-uppercase h3">Registrarse</span>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control my-3" formControlName="name"
+                            placeholder="Ingrese su nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control my-3" formControlName="userName"
+                            placeholder="Ingrese su usuario">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control my-3" formControlName="email"
+                            placeholder="Ingrese su correo electronico">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control my-3" formControlName="password"
+                            placeholder="Ingrese su contraseña">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="float-left">Ya tiene cuenta? <a routerLink="/login">Inicie sesión aqui</a></span>
+                    <button type="submit"
+                        class="btn gradient text-white border-0 font-weight-bold float-right">Registrar</button>
+                </div>
+
+            </div>
+        </form>
     </div>
 </div>

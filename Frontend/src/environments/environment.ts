@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: '//localhost:3000',
+  Encrypt: 'sfkhehfuewfhefheoIFHIFEHFIOEWGHEWIGOHasfe<g<e<24<22<24242-.4-.2{+´2422',
+  apiUrlLogin: '/api/user/login/',
+  apiUrlUser: '/api/user/',
+  apiUrlUserUpload: '/api/user/upload/',
+  apiUrlConversation: '/api/conversation/',
+  apiUrlGroup: '/api/group/',
+  apiUrlProject: '/api/project/',
 };
 
 /*
