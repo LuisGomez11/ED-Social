@@ -26,7 +26,7 @@ UserCtrl.postUser = async (req, res) => {
 UserCtrl.loginUser = async (req, res) => {
     const { userName, password } = req.body;
     const user = await User.findOne({userName});
-    if(!user) return res.status(401).send("Email doen't exists");
+    if(!user) return res.status(401).send("Username doen't exists");
     const decryptedPassword = CryptoJS.AES.decrypt(user.toJSON().password, Config.Encrypt).toString(CryptoJS.enc.Utf8);
     // console.log(decryptedPassword);
     if(decryptedPassword !== password) return res.status(401).send("Incorrect password");

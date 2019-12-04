@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { User } from 'src/app/Models/user';
 import { Forms } from 'src/app/Models/forms';
 import { AuthService } from 'src/app/Services/auth.service';
 import Swal from 'sweetalert2'
