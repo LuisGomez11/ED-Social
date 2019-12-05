@@ -10,4 +10,4 @@ const UserSchema = new schema({
     createAt: { type: Date, default: Date.now }
 });
 
-exports.User = Moongoose.model('Users', UserSchema);
+module.exports.User = Moongoose.model('Users', UserSchema);

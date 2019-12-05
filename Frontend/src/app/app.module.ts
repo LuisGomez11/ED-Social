@@ -14,6 +14,8 @@ import { VerifyService } from './Services/verify.service';
 import { ChatComponent } from './Components/chat/chat.component';
 import { UsersComponent } from './Components/users/users.component';
 
+import { SocketIoModule } from 'ngx-socket-io';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,8 @@ import { UsersComponent } from './Components/users/users.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SocketIoModule.forRoot({ options: {}, url: '//localhost:3000' })
   ],
   providers: [
     AuthGuard,

@@ -17,8 +17,10 @@ app.use(cors());
 
 // Rutas
 app.use(require('./Routes/UserRoutes'))
+app.use(require('./Routes/PublicationRoutes'))
 
 // Iniciar servidor
-app.listen(app.get('port'), () => {
+const server =  app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));
+    require('./Controllers/Socket.controller').SocketConfig(server);
 });

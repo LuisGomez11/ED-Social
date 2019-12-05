@@ -3,7 +3,7 @@
         <div class="card-body py-2 d-flex justify-content-between">
             <div class="d-flex">
                 <img [src]="user.image" width="55" height="55" class="rounded-circle mr-3">
-                <h5 class="name-user m-0">{{ user.name }} <span class="text-muted">| {{ user.userName }}</span> </h5>
+                <h5 class="name-user m-0">{{ user.name }} <span class="text-muted">| @{{ user.userName }}</span> </h5>
             </div>
             <button title="Cerrar Sesión" class="btn p-0" (click)="logOut()"><i
                     class="fas fa-sign-out-alt text-secondary"></i></button>
@@ -11,14 +11,14 @@
     </div>
     <div class="row mt-3">
         <div class="col-md-8">
-            <form>
+            <form [formGroup]="FormControl" (ngSubmit)="addPublication()">
                 <div class="card">
                     <div class="card-header">
                         Crear publicación
                     </div>
                     <div class="card-body py-2">
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Escriba su publicación" rows="2"
+                            <textarea class="form-control" formControlName="publication" placeholder="Escriba su publicación" rows="2"
                                 required></textarea>
                         </div>
                     </div>
@@ -29,18 +29,20 @@
                     </div>
                 </div>
             </form>
-            <div class="card my-2" *ngFor="let l of list">
+            <h4 class="mt-2">Publicaciones</h4>
+            <hr>
+            <div class="card my-2" *ngFor="let p of publications">
                 <div class="card-body" style="padding-top: 5px; padding-bottom: 5px;">
                     <div class="d-flex">
-                        <div class="mr-3">
+                        <!-- <div class="mr-3">
                             <img class="mt-1 rounded-circle" [src]="user.image" width="45" height="45">
-                        </div>
+                        </div> -->
                         <div>
-                            <p class="m-0 text-primary mt-1 h5">Luis Alberto Gomez</p>
-                            <p class="text-muted m-0" style="font-size: 13px;">12/11/2019 12:48</p>
+                            <p class="m-0 text-primary mt-1 h5">{{ p.user }}</p>
+                            <p class="text-muted m-0" style="font-size: 13px;">{{ p.createAt }}</p>
                         </div>
                     </div>
-                    <p class="mt-1">Esta es una publicación de prueba</p>
+                    <p class="mt-1">{{ p.publication }}</p>
                 </div>
             </div>
         </div>

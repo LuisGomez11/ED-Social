@@ -7,4 +7,4 @@ const PublicationSchema = new schema({
     createAt: { type: String, required: true }
 });
 
-exports.User = Moongoose.model('Publications', PublicationSchema);
+exports.Publication = Moongoose.model('Publications', PublicationSchema);

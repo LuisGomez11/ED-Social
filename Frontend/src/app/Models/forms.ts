@@ -30,4 +30,12 @@ export class Forms {
         });
     }
 
+    FormPublication() {
+        return new FormGroup({
+            publication: new FormControl('', {
+                validators: [Validators.required, Validators.minLength(1), Validators.maxLength(200)]
+            })
+        });
+    }
+
 }

@@ -6,4 +6,5 @@ export const environment = {
   urlUsers: local + '/user',
   urlSignUp: local + '/user/signup',
   urlLogin: local + '/user/login',
+  urlPublication: local + '/publication'
 };
