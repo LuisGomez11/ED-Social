@@ -1,0 +1,24 @@
+.content-home{
+    background-color: #eee;
+    background-attachment: fixed;
+    height: calc(100vh - 56px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.content-home::-webkit-scrollbar{
+    width: 8px;
+    background: transparent;
+}
+
+.content-home::-webkit-scrollbar-thumb{
+  background-color: #797979;
+}
+
+.name-user{
+  line-height: 55px;
+}
+
+a{
+  display: block;
+}

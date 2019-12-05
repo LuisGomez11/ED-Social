@@ -1,1 +1,63 @@
-<p>home works!</p>
+<div class="content-home p-4">
+    <div class="card">
+        <div class="card-body py-2 d-flex justify-content-between">
+            <div class="d-flex">
+                <img [src]="user.image" width="55" height="55" class="rounded-circle mr-3">
+                <h5 class="name-user m-0">{{ user.name }} <span class="text-muted">| {{ user.userName }}</span> </h5>
+            </div>
+            <button title="Cerrar Sesión" class="btn p-0" (click)="logOut()"><i
+                    class="fas fa-sign-out-alt text-secondary"></i></button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <form>
+                <div class="card">
+                    <div class="card-header">
+                        Crear publicación
+                    </div>
+                    <div class="card-body py-2">
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Escriba su publicación" rows="2"
+                                required></textarea>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary float-right"><i
+                                class="fas fa-paper-plane mr-2"></i><span>Publicar</span></button>
+
+                    </div>
+                </div>
+            </form>
+            <div class="card my-2" *ngFor="let l of list">
+                <div class="card-body" style="padding-top: 5px; padding-bottom: 5px;">
+                    <div class="d-flex">
+                        <div class="mr-3">
+                            <img class="mt-1 rounded-circle" [src]="user.image" width="45" height="45">
+                        </div>
+                        <div>
+                            <p class="m-0 text-primary mt-1 h5">Luis Alberto Gomez</p>
+                            <p class="text-muted m-0" style="font-size: 13px;">12/11/2019 12:48</p>
+                        </div>
+                    </div>
+                    <p class="mt-1">Esta es una publicación de prueba</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Accesos directos
+                </div>
+                <div class="card-body">
+                    <a routerLink="/chat" class="text-decoration-none mb-2">
+                        <img src="../../../assets/icons/i-message.png" width="30" height="30" alt="">  Mensajes                       
+                    </a>
+                    <a routerLink="/users" class="text-decoration-none">
+                        <img src="../../../assets/icons/group.png" width="30" height="30" alt="">  Lista de usuarios
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

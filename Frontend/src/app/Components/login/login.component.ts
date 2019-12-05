@@ -20,6 +20,9 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if(this.auth.getToken()){
+      this.router.navigate(['/home']);
+    }
   }
 
   async login() {

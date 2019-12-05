@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { Forms } from 'src/app/Models/forms';
 import { AuthService } from 'src/app/Services/auth.service';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -13,9 +14,12 @@ export class SignupComponent implements OnInit {
 
   FormControl: FormGroup = new Forms().FormSignUp();
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
+    if(this.auth.getToken()){
+      this.router.navigate(['/home']);
+    }
   }
 
   async signUp(){

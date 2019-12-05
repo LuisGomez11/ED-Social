@@ -9,12 +9,19 @@ import { User } from 'src/app/Models/user';
 })
 export class HomeComponent implements OnInit {
 
+  list: any[]
+
   user: User;
 
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
     this.user = this.auth.getStorage();
+    this.list = [1,1,1,1,1,1,1,1,1]
+  }
+
+  logOut(){
+    this.auth.logOut();
   }
 
 }

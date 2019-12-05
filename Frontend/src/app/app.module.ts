@@ -11,13 +11,17 @@ import { SignupComponent } from './Components/signup/signup.component';
 import { HomeComponent } from './Components/home/home.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { VerifyService } from './Services/verify.service';
+import { ChatComponent } from './Components/chat/chat.component';
+import { UsersComponent } from './Components/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    ChatComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
