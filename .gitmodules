@@ -1,0 +1,3 @@
+[submodule "ed-social"]
+	path = ed-social
+	url = https://git.heroku.com/ed-social.git

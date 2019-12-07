@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ConversationService {
 
-    readonly SERVER = 'http://localhost:3000/conversation/';
+    readonly SERVER = '/api/conversation/';
 
     constructor(private Http: HttpClient) { }
 

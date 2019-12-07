@@ -4,17 +4,17 @@ const router = express.Router();
 
 const { _Get, _Post, _GetOne, _Delete, _Put } = require('../Controllers/Messages.controller');
 
-router.get('/user', UserCtrl.getUsers);
+router.get('/api/user', UserCtrl.getUsers);
 
-router.post('/user/signup', UserCtrl.postUser); //Registrar usuario
+router.post('/api/user/signup', UserCtrl.postUser); //Registrar usuario
 
-router.post('/user/login', UserCtrl.loginUser); //Login usuario
+router.post('/api/user/login', UserCtrl.loginUser); //Login usuario
 
 // Rutas del chat
-router.get('/conversation/', _Get);
-router.get('/conversation/:Id', _GetOne);
-router.post('/conversation', _Post);
-router.put('/conversation/:Id', _Put);
-router.delete('/conversation/:Id', _Delete);
+router.get('/api/conversation/', _Get);
+router.get('/api/conversation/:Id', _GetOne);
+router.post('/api/conversation', _Post);
+router.put('/api/conversation/:Id', _Put);
+router.delete('/api/conversation/:Id', _Delete);
 
 module.exports = router;
