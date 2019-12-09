@@ -41,7 +41,7 @@
             <div class="wrap">
                 <input type="text" placeholder="Escribe un mensaje..." autocomplete="off" id="Message"
                     style="resize: none;" (input)="OnChange($event)" (keypress)="onKeyPress($event)">
-                <button class="submit">
+                <button class="submit" (click)="PushMessage()">
                     <i class="fas fa-paper-plane" [hidden]="(LoadingMessage | async)"></i>
                     <div class="spinner-border text-primary" role="status" [hidden]="!(LoadingMessage | async)">
                         <span class="sr-only">Loading...</span>
