@@ -1,7 +1,7 @@
 <div class="contenedor">
     <div class="side-panel">
         <div class="p-3 search-content">
-            <h2 class="text-white">Chats</h2>
+            <h2><i class="fas fa-comments"></i><span>Chats</span></h2>
             <div class="form-group">
                 <input type="text" id="search" class="form-control" placeholder="Buscar contacto...">
             </div>
@@ -9,11 +9,11 @@
         <div class="contacts">
             <ul>
                 <li class="contact" *ngFor="let user of Users | async">
-                    <button class="border-0 bg-transparent wrap text-white d-flex"
+                    <button class="border-0 bg-transparent wrap d-flex"
                         (click)="StartConversation(user._id)">
                         <img [src]="User.image" width="45" height="45" title="{{user.name}}">
                         <div class="meta">
-                            <p class="name">{{user.name}}</p>
+                            <p class="name text-truncate">{{user.name}}</p>
                         </div>
                     </button>
                 </li>
@@ -21,9 +21,11 @@
         </div>
     </div>
     <div class="conversation" *ngIf="this.showChat | async">
-        <div class="contact-profile shadow-sm">
+        <div class="contact-profile">
             <img [src]="User.image" width="40" height="40" alt="">
-            <p>{{Chat.DisplayName}}</p>
+            <div>
+                <p class="text-truncate">{{Chat.DisplayName}}</p>
+            </div>
         </div>
         <div class="messages1" id="scroll">
             <ul>
