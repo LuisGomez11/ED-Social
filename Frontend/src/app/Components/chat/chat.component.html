@@ -11,7 +11,7 @@
                 <li class="contact" *ngFor="let user of Users | async">
                     <button class="border-0 bg-transparent wrap d-flex"
                         (click)="StartConversation(user._id)">
-                        <img [src]="User.image" width="45" height="45" title="{{user.name}}">
+                        <img [src]="user.image" width="45" height="45" title="{{user.name}}">
                         <div class="meta">
                             <p class="name text-truncate">{{user.name}}</p>
                         </div>

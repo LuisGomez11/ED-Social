@@ -22,3 +22,8 @@
 a{
   display: block;
 }
+
+.btn, .btn:focus{
+    outline: none;
+	box-shadow: none;
+}

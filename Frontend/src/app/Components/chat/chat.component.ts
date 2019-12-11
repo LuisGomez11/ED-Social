@@ -72,7 +72,7 @@ export class ChatComponent implements OnInit {
     this.Suscriptions.push(this.ChatBind.subscribe(chat => {
       if (JSON.stringify(chat) !== '{}') {
         chat.members = chat.members.filter(item => item._id !== this.User._id);
-        this.Chat = Object.assign({ 'DisplayName': chat.members[0].name }, chat);
+        this.Chat = Object.assign({ 'image': chat.members[0].image, 'DisplayName': chat.members[0].name }, chat);
         this.Messages.next(chat.messages);
         setTimeout(() => {
           document.getElementById('scroll').scrollTop = document.getElementById('scroll').scrollHeight;
@@ -121,7 +121,7 @@ export class ChatComponent implements OnInit {
       'Message': message.messages[message.messages.length - 1],
       'Member': {
         'DisplayName': this.Chat.DisplayName,
-        'UrlImage': this.Chat.UrlImage,
+        'image': this.Chat.image,
         'Message': message.messages[message.messages.length - 1].message
       }
     });
