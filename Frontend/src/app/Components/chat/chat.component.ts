@@ -23,7 +23,11 @@ export class ChatComponent implements OnInit {
   Suscriptions: Array<Subscription> = [];
   User: User;
 
-  constructor(private ChatService: ChatService, private auth: AuthService, private conversation: ConversationService, private userService: UserService) {
+  constructor(private ChatService: ChatService,
+    private auth: AuthService,
+    private conversation: ConversationService,
+    private userService: UserService
+  ) {
     this.User = this.auth.getStorage();
   }
 

@@ -14,16 +14,18 @@ export class UsersComponent implements OnInit {
   allUsers: User[];
   users: User[];
 
-  constructor(private service: UserService, private auth: AuthService) { }
+  constructor(private service: UserService,
+    private auth: AuthService
+  ) { }
 
   ngOnInit() {
     this.user = this.auth.getStorage();
     this.service.getUsers().subscribe(res => {
       this.allUsers = res;
       this.users = this.allUsers.filter(us => us._id !== this.user._id );
-      console.log(this.users);
     });
-    
+
   }
+
 
 }
