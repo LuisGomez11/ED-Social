@@ -1,0 +1,16 @@
+.content-profile{
+    background-color: #eee;
+    background-attachment: fixed;
+    height: calc(100vh - 56px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.content-profile::-webkit-scrollbar{
+    width: 8px;
+    background: transparent;
+}
+
+.content-profile::-webkit-scrollbar-thumb{
+  background-color: #797979;
+}

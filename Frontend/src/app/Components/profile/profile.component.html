@@ -1,0 +1,26 @@
+<div class="content-profile p-4">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" [src]="User.image" alt="Card image">
+                <div class="card-body text-center">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <h3>{{ User.name }}</h3>
+                        </li>
+                        <li class="list-group-item">@{{ User.userName }}</li>
+                        <li class="list-group-item">{{ User.email }}</li>
+                    </ul>
+                    <div *ngIf="UserSession._id === User._id">
+                        <input type="file" name="imageUpload" style="visibility: hidden;" id="imageUpload"
+                            accept="image/x-png,image/gif,image/jpeg" (input)="UploadImage($event)" />
+                        <label for="imageUpload" style="cursor: pointer;">
+                            <img src="../../../assets/icons/photo-camera.png" width="50" alt="">
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

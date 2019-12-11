@@ -4,6 +4,7 @@
             <div class="d-flex">
                 <img [src]="user.image" width="55" height="55" class="rounded-circle mr-3">
                 <h5 class="name-user m-0">{{ user.name }} <span class="text-muted">| @{{ user.userName }}</span> </h5>
+                <button (click)="viewProfile(user._id)">Perfil</button>
             </div>
             <button title="Cerrar Sesión" class="btn p-0" (click)="logOut()"><i
                     class="fas fa-sign-out-alt text-secondary"></i></button>

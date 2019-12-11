@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/Models/user';
 import { UserService } from 'src/app/Services/user.service';
 import { AuthService } from 'src/app/Services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -15,7 +16,8 @@ export class UsersComponent implements OnInit {
   users: User[];
 
   constructor(private service: UserService,
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -27,5 +29,9 @@ export class UsersComponent implements OnInit {
 
   }
 
-
+  viewProfile(id: string) {
+    localStorage.removeItem('id');
+    localStorage.setItem('id', id);
+    this.router.navigate(['profile']);
+  }
 }

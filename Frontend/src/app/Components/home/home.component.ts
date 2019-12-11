@@ -6,6 +6,7 @@ import { Publication } from 'src/app/Models/publication';
 import Swal from 'sweetalert2'
 import { Forms } from 'src/app/Models/forms';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
   currentDate: string;
 
 
-  constructor(private auth: AuthService, private service: PublicationService) { }
+  constructor(private auth: AuthService, private service: PublicationService, private router: Router) { }
 
   ngOnInit() {
     this.user = this.auth.getStorage();
@@ -58,6 +59,12 @@ export class HomeComponent implements OnInit {
         'error'
       );
     }
+  }
+
+  viewProfile(id: string) {
+    localStorage.removeItem('id');
+    localStorage.setItem('id', id);
+    this.router.navigate(['profile']);
   }
 
 }
