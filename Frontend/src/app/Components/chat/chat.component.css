@@ -11,7 +11,7 @@
     color: #000;
     overflow: hidden;
     position: relative;
-    border-right: .5px solid #eee;
+    border-right: .5px solid #ddd;
 }
 
 .side-panel .search-content .form-group input{
@@ -64,7 +64,7 @@
 .side-panel .contacts::-webkit-scrollbar{
     width: 8px;
     background: transparent;
-    border-right: .5px solid #eee;
+    border-right: .5px solid #ddd;
 }
 
 .side-panel .contacts::-webkit-scrollbar-thumb{
@@ -144,7 +144,7 @@
     height: 60px;
     line-height: 60px;
     background: #fff;
-    border-bottom: .5px solid #eee;
+    border-bottom: .5px solid #ddd;
 }
 
 .conversation .contact-profile img{
