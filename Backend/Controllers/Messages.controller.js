@@ -5,7 +5,7 @@ const { Conversation } = require('../Models/Messages.model');
  */
 exports._Get = (req, res) => {
   Conversation.find().where('members').in([req.headers._id])
-    .populate('members', 'name')
+    .populate({path: 'members', select: '-userName -password -email -createAt' })
     .then(conversation => {
       return res.status(conversation !== null ? 200 : 404).send(conversation !== null ? conversation : {});
     }).catch(err => {
@@ -18,7 +18,7 @@ exports._Get = (req, res) => {
  */
 exports._GetOne = (req, res) => {
   Conversation.findOne().where('members').all([req.headers._id, req.params.Id])
-    .populate('members', 'name').then(conversation => {
+    .populate({path: 'members', select: '-userName -password -email -createAt' }).then(conversation => {
       return res.status(conversation !== null ? 200 : 404).send(conversation !== null ? conversation : {});
     }).catch(err => {
       return res.status(406).send(err);
@@ -30,7 +30,7 @@ exports._GetOne = (req, res) => {
  */
 exports._Post = (req, res) => {
   new Conversation(req.body).save().then(conversation => {
-    conversation.populate('members', 'name', function (err) {
+    conversation.populate({path: 'members', select: '-userName -password -email -createAt' }, function (err) {
       return res.status(conversation !== null ? 200 : 404).send(conversation !== null ? conversation : {});
     });
   }).catch(err => {

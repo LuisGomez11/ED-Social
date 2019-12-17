@@ -3,7 +3,7 @@ const schema = Moongoose.Schema;
 
 const Message = new schema({
   message: { type: String, required: true },
-  user: { type: schema.Types.ObjectId, ref: 'users', required: true },
+  user: { type: schema.Types.ObjectId, ref: 'Users', required: true },
   createAt: { type: Date, default: Date.now },
 });
 

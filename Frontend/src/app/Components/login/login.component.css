@@ -1,5 +1,6 @@
 .row{
     height: calc(100% - 56px);
+    overflow-x: hidden;
 }
 
 .col-md-5, .col-md-7{

@@ -22,7 +22,7 @@
     </div>
     <div class="conversation" *ngIf="this.showChat | async">
         <div class="contact-profile">
-            <img [src]="User.image" width="40" height="40" alt="">
+            <img [src]="Chat.UrlImage" width="40" height="40" alt="">
             <div>
                 <p class="text-truncate">{{Chat.DisplayName}}</p>
             </div>
@@ -31,7 +31,7 @@
             <ul>
                 <li [ngClass]="{'sent': item.user !== this.User._id, 'replies': item.user === this.User._id}"
                     *ngFor="let item of Messages | async">
-                    <img [src]="User.image" width="30" height="30" alt="">
+                    <img [src]="FilterImage(item)" width="30" height="30" alt="">
                     <p>{{item.message}}</p>
                 </li>
                 <li class="replies">

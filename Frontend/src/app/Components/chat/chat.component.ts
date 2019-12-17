@@ -72,13 +72,22 @@ export class ChatComponent implements OnInit {
     this.Suscriptions.push(this.ChatBind.subscribe(chat => {
       if (JSON.stringify(chat) !== '{}') {
         chat.members = chat.members.filter(item => item._id !== this.User._id);
-        this.Chat = Object.assign({ 'image': chat.members[0].image, 'DisplayName': chat.members[0].name }, chat);
+        this.Chat = Object.assign({ 'UrlImage': chat.members[0].image, 'DisplayName': chat.members[0].name }, chat);
         this.Messages.next(chat.messages);
         setTimeout(() => {
           document.getElementById('scroll').scrollTop = document.getElementById('scroll').scrollHeight;
         }, 500);
       }
     }));
+  }
+
+  FilterImage(user: any): String {
+    if (user.User !== this.User._id) {
+      let fil = this.Chat.members.filter(item => item._id === user.user);
+      return fil.length >= 1 ? fil[0].image : 'Usuario Eliminado';
+    } else {
+      return this.User.image;
+    }
   }
 
   OnChange(text) {
