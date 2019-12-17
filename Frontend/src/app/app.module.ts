@@ -33,7 +33,7 @@ import { ProfileComponent } from './Components/profile/profile.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SocketIoModule.forRoot({ options: {}, url: '//localhost:3000' }) //https://ed-social.herokuapp.com
+    SocketIoModule.forRoot({ options: {}, url: 'https://ed-social.herokuapp.com' }) //https://ed-social.herokuapp.com
   ],
   providers: [
     AuthGuard,
