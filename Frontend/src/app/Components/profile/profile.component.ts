@@ -52,7 +52,6 @@ export class ProfileComponent implements OnInit {
 
   getPublications() {
     this.service.getPublications().subscribe(res => {
-      this.publications = res.reverse();
       this.allPublications = res.reverse();
       this.publications = this.allPublications.filter(us => us.user === this.User.name );
     })

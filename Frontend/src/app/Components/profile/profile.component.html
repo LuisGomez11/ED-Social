@@ -31,9 +31,9 @@
             <div class="card my-2" *ngFor="let p of publications">
                 <div class="card-body" style="padding-top: 5px; padding-bottom: 5px;">
                     <div class="d-flex">
-                        <!-- <div class="mr-3">
-                            <img class="mt-1 rounded-circle" [src]="user.image" width="45" height="45">
-                        </div> -->
+                        <div class="mr-3">
+                            <img class="mt-1 rounded-circle" [src]="p.imageUser" width="45" height="45">
+                        </div>
                         <div>
                             <p class="m-0 text-primary mt-1 h5">{{ p.user }}</p>
                             <p class="text-muted m-0" style="font-size: 13px;">{{ p.createAt }}</p>

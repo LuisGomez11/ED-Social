@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
   async addPublication() {
     this.FormControl.value.createAt = this.currentDate;
     this.FormControl.value.user = this.user.name;
+    this.FormControl.value.imageUser = this.user.image;
     if (this.FormControl.valid) {
       await this.service.addPublication(this.FormControl.value).subscribe(res => {
         console.log(res);

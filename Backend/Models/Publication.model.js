@@ -3,6 +3,7 @@ const schema = Moongoose.Schema;
 
 const PublicationSchema = new schema({
     user: { type: String, required: true},
+    imageUser: { type: String, required: true},
     publication: { type: String, required: true },
     createAt: { type: String, required: true }
 });
