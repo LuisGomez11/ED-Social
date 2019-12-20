@@ -5,6 +5,7 @@ import { PublicationService } from 'src/app/Services/publication.service';
 import { UserService } from 'src/app/Services/user.service';
 import { Router } from '@angular/router';
 import { Subject, BehaviorSubject } from 'rxjs';
+import { Publication } from 'src/app/Models/publication';
 
 @Component({
   selector: 'app-profile',
@@ -15,6 +16,9 @@ export class ProfileComponent implements OnInit {
 
   User: User;
   UserSession: User;
+
+  publications: Publication[];
+  allPublications: Publication[];
 
   token: String;
 
@@ -29,7 +33,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
     this.token = this.auth.getToken();
     this.UserSession = this.auth.getStorage();
     const id = localStorage.getItem('id');
@@ -41,6 +45,16 @@ export class ProfileComponent implements OnInit {
     }
     this.serviceUser.getUser(id).subscribe(res => {
       this.User = res;
+      this.getPublications();
+    })
+    
+  }
+
+  getPublications() {
+    this.service.getPublications().subscribe(res => {
+      this.publications = res.reverse();
+      this.allPublications = res.reverse();
+      this.publications = this.allPublications.filter(us => us.user === this.User.name );
     })
   }
 

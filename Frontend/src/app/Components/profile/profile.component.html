@@ -1,7 +1,7 @@
 <div class="content-profile p-4">
     <div class="row">
-        <div class="col-md-5">
-            <div class="card" style="width:400px">
+        <div class="col-sm-4 mb-3">
+            <div class="card mx-auto">
                 <img class="card-img-top" [src]="User.image" alt="Card image">
                 <div class="card-body text-center">
                     <ul class="list-group list-group-flush">
@@ -11,7 +11,7 @@
                         <li class="list-group-item">@{{ User.userName }}</li>
                         <li class="list-group-item">{{ User.email }}</li>
                     </ul>
-                    <div *ngIf="UserSession._id === User._id">
+                    <div *ngIf="UserSession._id === User._id" class="text-center">
                         <input type="file" name="imageUpload" style="visibility: hidden;" id="imageUpload"
                             accept="image/x-png,image/gif,image/jpeg" (input)="UploadImage($event)" />
                         <label for="imageUpload" style="cursor: pointer;">
@@ -19,6 +19,27 @@
                         </label>
                     </div>
 
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-header">
+                    Publicaciones
+                </div>
+            </div>
+            <div class="card my-2" *ngFor="let p of publications">
+                <div class="card-body" style="padding-top: 5px; padding-bottom: 5px;">
+                    <div class="d-flex">
+                        <!-- <div class="mr-3">
+                            <img class="mt-1 rounded-circle" [src]="user.image" width="45" height="45">
+                        </div> -->
+                        <div>
+                            <p class="m-0 text-primary mt-1 h5">{{ p.user }}</p>
+                            <p class="text-muted m-0" style="font-size: 13px;">{{ p.createAt }}</p>
+                        </div>
+                    </div>
+                    <p class="mt-1">{{ p.publication }}</p>
                 </div>
             </div>
         </div>
